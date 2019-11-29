@@ -1,5 +1,5 @@
 <template>
-    <ul class="sidenav app-sidenav open">
+    <ul class="sidenav app-sidenav" :class="{open: value}">
 
         <router-link
             v-for="link in links"
@@ -16,6 +16,7 @@
 
 <script>
     export default {
+        props: ['value'],
         data: () => ({
             links: [
                 {title: 'Счет', url: '/', exact: true}, //тк данный url есть в составе всех других, то этот пункт постоянно подсвечивается. exact говорит что url должен быть именно таким а не содержаться к часть урла
@@ -26,5 +27,4 @@
             ]
         })
     }
-
 </script>
